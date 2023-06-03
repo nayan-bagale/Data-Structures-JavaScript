@@ -10,6 +10,7 @@ class LinkedList {
     this.tail = null;
     this.size = 0;
   }
+  
   addElementLast(data){
     let node = new Node(data);
 
