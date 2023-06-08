@@ -69,6 +69,7 @@ class LinkedList {
 
     }
   }
+
   removeElementFirst(){
     if (this.head === this.tail) {
       this.head = null;
@@ -121,6 +122,24 @@ class LinkedList {
 
   }
 
+  reverseElement(){
+    let prev = null;
+    let current = this.head;
+    let next = null;
+
+    for(let i=0; i<this.size; i++){
+      if(i === 0){
+        this.tail = current;
+      }
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
+    }
+    this.head = prev;
+    
+  }
+
   showSize(){
     return this.size;
   }
@@ -132,9 +151,31 @@ class LinkedList {
         $ = $ + current.data.toString() + ' -> ';
         current = current.next;
     }
-    console.log($ + this.tail.data + '\n' + 'Length: ' + this.size)
-    console.log(`Head: ${this.head.data} \nTail: ${this.tail.data}`)
+    console.log(`${$}${this.tail.data} -> END \nLength: ${this.size}`);
+    console.log(`Head: ${this.head.data} \nTail: ${this.tail.data}`);
 
+  }
+
+  getIndex(data){
+    let node = this.head;
+    for(let i=0; i<this.size; i++){
+      if(node.data === data){
+        return i
+      }
+      node = node.next;
+    }
+    return null
+  }
+
+  getData(index){
+    let node = this.head;
+    for (let i = 0; i < this.size; i++) {
+      if (i === index) {
+        return node.data;
+      }
+      node = node.next;
+    }
+    return null;
   }
 
 }
@@ -150,11 +191,16 @@ ll.addElementLast(90);
 // ll.removeElementLast();
 
 // ll.removeElementAtIndex(1);
-ll.removeElementAtIndex(2);
+// ll.removeElementAtIndex(2);
 
 // ll.addElementLast(5);
 // ll.addElementLast(20);
 // ll.addElementFirst(558);
 // ll.addElementAtIndex(4548,4);
 // ll.addElementFirst(52);
+
+console.log(ll.getData(3)); 
+
+// ll.reverseElement();
+
 ll.showList();
