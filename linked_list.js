@@ -180,27 +180,27 @@ class LinkedList {
 
 }
 
-let ll = new LinkedList();
+// let ll = new LinkedList();
 
-ll.addElementLast(2);
-ll.addElementLast(5);
-ll.addElementLast(8);
-ll.addElementLast(9);
-ll.addElementLast(90);
-
-// ll.removeElementLast();
-
-// ll.removeElementAtIndex(1);
-// ll.removeElementAtIndex(2);
-
+// ll.addElementLast(2);
 // ll.addElementLast(5);
-// ll.addElementLast(20);
-// ll.addElementFirst(558);
-// ll.addElementAtIndex(4548,4);
-// ll.addElementFirst(52);
+// ll.addElementLast(8);
+// ll.addElementLast(9);
+// ll.addElementLast(90);
 
-console.log(ll.getData(3)); 
+// // ll.removeElementLast();
 
-// ll.reverseElement();
+// // ll.removeElementAtIndex(1);
+// // ll.removeElementAtIndex(2);
 
-ll.showList();
+// // ll.addElementLast(5);
+// // ll.addElementLast(20);
+// // ll.addElementFirst(558);
+// // ll.addElementAtIndex(4548,4);
+// // ll.addElementFirst(52);
+
+// // ll.reverseElement();
+
+// ll.showList();
+
+module.export = LinkedList; 
