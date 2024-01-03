@@ -156,6 +156,10 @@ class LinkedList {
 
   }
 
+  displayRec(){
+    
+  }
+
   getIndex(data){
     let node = this.head;
     for(let i=0; i<this.size; i++){
@@ -182,11 +186,11 @@ class LinkedList {
 
 // let ll = new LinkedList();
 
-// ll.addElementLast(2);
-// ll.addElementLast(5);
-// ll.addElementLast(8);
-// ll.addElementLast(9);
-// ll.addElementLast(90);
+ll.addElementLast(2);
+ll.addElementLast(5);
+ll.addElementLast(8);
+ll.addElementLast(9);
+ll.addElementLast(90);
 
 // // ll.removeElementLast();
 
@@ -201,6 +205,6 @@ class LinkedList {
 
 // // ll.reverseElement();
 
-// ll.showList();
+ll.showList();
 
-module.export = LinkedList; 
+// module.export = LinkedList; 

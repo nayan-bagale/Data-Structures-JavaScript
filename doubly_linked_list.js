@@ -21,6 +21,7 @@ class Doubly_LinkedList {
     } else {
       let previ = this.head;
       node.next = previ;
+      node.prev = null;
       previ.prev = node;
       this.head = node;
     }
@@ -35,6 +36,7 @@ class Doubly_LinkedList {
       this.tail = node;
     } else {
       node.prev = this.tail;
+      node.next = null;
       this.tail.next = node;
       this.tail = node;
     }
@@ -132,16 +134,21 @@ class Doubly_LinkedList {
     console.log(`Head: ${this.head.data} \nTail: ${this.tail.data}`);
   }
 
-  displayReverse() {
-    let node = this.tail,
-      $ = "";
-    while (node != null) {
-      $ += `${node.data.toString()} -> `;
+  reverse() {
+    let node = this.head, temp;
+    // this.tail = node;
+    
+    for(let i=0; i<this.size ;i++){
+      temp = node.prev;
+      node.prev = node.next;
+      node.next = temp;
       node = node.prev;
     }
 
-    console.log(`${$}END \nLength: ${this.size}`);
-    console.log(`Head: ${this.head.data} \nTail: ${this.tail.data}`);
+    if(temp != null){
+      this.head = temp;
+    }
+
   }
 
   getIndex(data){
@@ -185,10 +192,11 @@ dll.addLast(7)
 dll.addLast(70)
 dll.addLast(457)
 
-dll.addAtindex(54,2)
+// dll.addAtindex(54,2)
 
 // console.log(dll.removeAtIndex(7))
-console.log(dll.getData(1))
+// console.log(dll.getData(1))
 
 dll.display()
-// dll.displayReverse()
+dll.reverse()
+dll.display()
